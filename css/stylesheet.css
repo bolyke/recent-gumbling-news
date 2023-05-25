@@ -2505,6 +2505,9 @@ b {
     .btn-link {
         padding-left: 20px;
     }
+    .header-nav-footer {
+        max-width: unset;   
+    }
     .main-swiper .btn-link::after {
         top: 3px;
         background-color: #ED3F3F;
