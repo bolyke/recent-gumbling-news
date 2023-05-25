@@ -2339,11 +2339,11 @@ b {
         background-size: 32px;
     }
     .header-nav {
-        top: 100px;
+        top: 96px;
         left: 0;
         z-index: -1;
         width: 100%;
-        height: calc(100% - 100px);
+        height: calc(100% - 96px);
         padding: 0 0 16px;
         box-sizing: border-box;
     }
