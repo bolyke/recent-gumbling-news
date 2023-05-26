@@ -2111,6 +2111,7 @@ b {
     margin-bottom: 0;
     margin-left: 32px;
     width: 161px;
+    min-width: 161px;
     height: 120px;
 }
 .articles-right .article-name {
@@ -2257,6 +2258,7 @@ b {
         max-width: 896px;
     }
     .articles-right .article-image {
+        min-width: 117px;
         width: 117px;
         height: 85px;
     }
@@ -2458,6 +2460,7 @@ b {
     }
     .recent-articles .article-image {
         width: 50%;
+        min-width: unset;
         padding-left: 6px;
         margin-bottom: 0;
         height: 194px;
@@ -2578,6 +2581,7 @@ b {
         position: absolute;
         right: 10px;
         top: 10px;
+        min-width: 104px;
         width: 104px;
         height: 79px;
         padding-left: 0;
