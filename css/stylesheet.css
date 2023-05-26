@@ -647,6 +647,7 @@ input, textarea {
     border: 1px solid #DBDBDB;
     border-radius: 6px;
     box-sizing: border-box;
+    box-shadow: none !important;
     outline: none;
 }
 select {
@@ -666,6 +667,7 @@ select {
     background-repeat: no-repeat;
     background-position: right 20px center;
     background-size: 10px 5px;
+    box-shadow: none !important;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -686,7 +688,7 @@ input:hover, textarea:hover, select:hover {
 input:focus, textarea:focus {
     background: #FFFFFF;
     border: 1px solid #579AFF;
-    box-shadow: 0px 0px 8px rgba(87, 154, 255, 0.2);
+    box-shadow: 0px 0px 8px rgba(87, 154, 255, 0.2) !important;
 }
 .field-md {
     padding-top: 13px;
@@ -740,6 +742,7 @@ input:focus, textarea:focus {
     margin: 0;
     padding: 12px;
     margin-top: 6px;
+    margin-bottom: 6px;
     z-index: 200;
     min-width: 60px;
     list-style: none;
@@ -767,7 +770,7 @@ input:focus, textarea:focus {
     margin-bottom: 12px;
 }
 .dropdown-menu li:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 .dropdown-menu a {
     display: flex;
@@ -807,14 +810,14 @@ input:focus, textarea:focus {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
     border: 0;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
     cursor: pointer;
     box-sizing: border-box;
 }
 .btn-primary:hover {
     color: #FFFFFF;
-    background: #1252DE;
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
+    background: #4278F0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 .btn-primary:focus, .btn-primary:active {
     color: #FFFFFF;
@@ -854,6 +857,8 @@ a.btn-default {
     text-transform: uppercase;
     background: transparent;
     border: 0;
+}
+a.btn-link {
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
@@ -876,8 +881,8 @@ a.btn-default {
 .btn-link-white::after {
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.73317 11L2.9165 10.1833L8.5165 4.58329L3.49984 4.58329V3.41663L10.4998 3.41663V10.4166H9.33317V5.39996L3.73317 11Z' fill='%23FFFFFF'/%3E%3C/svg%3E%0A");
 }
-.btn-link:focus, .btn-link:active, .btn-link:hover,
-.btn-link-white:focus, .btn-link-white:active, .btn-link-white:hover {
+a.btn-link:focus, a.btn-link:active, a.btn-link:hover,
+a.btn-link-white:focus, a.btn-link-white:active, a.btn-link-white:hover {
     color: #1252DE;
 }
 .btn-link-nav {
@@ -913,13 +918,12 @@ a.btn-default {
 }
 .btn-category {
     position: relative;
-    height: 19px;
     display: inline-block;
     padding: 0 16px 0 0;
     color: #19191A;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 18px;
+    line-height: 29px;
     text-transform: uppercase;
     background: transparent;
     border: 0;
@@ -931,12 +935,12 @@ a.btn-default {
     position: absolute;
     top: 1px;
     right: 0;
-    width: 12px;
-    height: 19px;
+    width: 14px;
+    height: 26px;
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='13' viewBox='0 0 12 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 1.5L9 6.5L4 11.5L3.1125 10.6125L7.225 6.5L3.1125 2.3875L4 1.5Z' fill='%2319191A'/%3E%3C/svg%3E%0A");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 12px;
+    background-size: 14px;
     transition: all 0.2s ease-in-out;
 }
 .btn-category:focus, .btn-category:active, .btn-category:hover {
@@ -952,10 +956,10 @@ a.btn-default {
     border-radius: 6px;
 }
 .btn-fab:hover {
-    background: rgba(164, 164, 168, 0.1);
+    background-color: rgba(164, 164, 168, 0.1);
 }
 .btn-fab:focus, .btn-fab:active {
-    background: rgba(229, 229, 230, 0.15);
+    background-color: rgba(229, 229, 230, 0.15);
 }
 .link-blue {
     color: #1252DE;
@@ -978,33 +982,33 @@ b {
     font-size: 40px;
     line-height: 52px;
 }
-.title-1 {
+.title-1, h1 {
     font-weight: 800;
     font-size: 40px;
     line-height: 52px;
 }
-.title-2 {
+.title-2, h2 {
     font-weight: 700;
     font-size: 21px;
     line-height: 29px;
 }
-.title-3 {
+.title-3, h3 {
     font-weight: 600;
     font-size: 18px;
     line-height: 29px;
     text-transform: uppercase;
 }
-.title-4 {
+.title-4, h4 {
     font-weight: 500;
     font-size: 16px;
     line-height: 23px;
     text-transform: uppercase;
 }
-.subtitle-1 {
+.subtitle-1, h5 {
     font-size: 16px;
     line-height: 24px;
 }
-.subtitle-2 {
+.subtitle-2, h6 {
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
@@ -1369,9 +1373,9 @@ b {
     height: 24px;
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 18V16H16V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z' fill='white'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 24px;
     background-position: center;
-    transition: all .2s ease-in;
+    /* transition: all .2s ease-in; */
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1438,10 +1442,10 @@ b {
 }
 .header-nav-footer .btn-fab {
     padding: 8px;
-    background: rgba(164, 164, 168, 0.1);
+    background-color: rgba(164, 164, 168, 0.1);
 }
 .header-nav-footer .btn-fab:hover {
-    background: rgba(229, 229, 230, 0.15);
+    background-color: rgba(229, 229, 230, 0.15);
 }
 .header-nav-footer .header-about {
     margin-bottom: 16px;
@@ -1572,11 +1576,11 @@ b {
     color: #fff;
     background: #19191A;
 }
-.main a {
+.main a, .main .btn-link {
     color: #fff;
 }
 .main a:hover {
-    color: #1252DE;
+    color: #4278F0;
 }
 .main-inner {
     padding: 24px 0 32px;
@@ -1596,8 +1600,6 @@ b {
     color: #FFFFFF;
 }
 .main .article-date {
-    font-size: 12px;
-    line-height: 15px;
     color: #BFBFBF;
 }
 .main .article-image img {
@@ -1624,7 +1626,7 @@ b {
         border-bottom: 90px solid #fff;
     }
     .main-swiper {
-        margin: 0 -32px -120px;
+        margin: 0 -32px -125px;
     }
     .main .article-item {
         position: relative;
@@ -1667,19 +1669,30 @@ b {
         padding: 0;
     }
 }
+@media (max-width: 530px) {
+    .main .article-image img {
+        height: 383px;
+    }
+}
 @media (max-width: 460px) {
     .main {
         border-bottom: 96px solid #fff;
     }
     .main-inner {
-        padding: 16px 0 24px;
+        padding: 24px 0;
     }
     .main-title {
         line-height: 19px;
         margin-bottom: 12px;
     }
     .main-swiper {
-        margin: 0 -16px -120px;
+        margin: 0 -16px -100px;
+    }
+    .main .article-content {
+        padding: 16px;
+    }
+    .main .article-image img {
+        height: 352px;
     }
 }
 @media (min-width: 641px) {
@@ -1805,6 +1818,7 @@ b {
     box-sizing: border-box;
 }
 .article-item {
+    display: block;
     position: relative;
 }
 .article-wrap {
@@ -1817,7 +1831,9 @@ b {
     background: rgba(164, 164, 168, 0.1);
 }
 .article-image {
+    overflow: hidden;
     display: block;
+    border-radius: 6px;
     margin-bottom: 12px;
 }
 .article-image img {
@@ -1825,8 +1841,11 @@ b {
     height: 180px;
     object-fit: cover;
     object-position: center;
-    border-radius: 6px;
     vertical-align: middle;
+    transition: transform .2s ease-in;
+}
+.article-item:hover .article-image img {
+    transform: scale(1.05);
 }
 .article-heading {
     margin-bottom: 8px;
@@ -1836,9 +1855,6 @@ b {
 }
 .article-category {
     margin-right: 10px;
-}
-.article-category a {
-    display: block;
 }
 .article-date {
     font-size: 14px;
@@ -2082,6 +2098,7 @@ b {
 .articles-right .article-wrap {
     display: flex;
     flex-direction: row-reverse;
+    align-items: flex-start;
 }
 .articles-right .article-content {
     width: 100%;
@@ -2224,6 +2241,15 @@ b {
 }
 /* ----------------- footer end ----------------- */
 /* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------- article page ---------------- */
+
+
+
+/* -------------- article page end -------------- */
+/* ---------------------------------------------- */
+
+
 @media (max-width: 1024px) {
     .container {
         max-width: 896px;
@@ -2271,34 +2297,34 @@ b {
     .container {
         padding: 0 32px;
     }
-    .title-1 {
+    .title-1, h1 {
         font-size: 26px;
         line-height: 33px;
     }
     
-    .title-2 {
+    .title-2, h2 {
         font-size: 18px;
         line-height: 29px;
     }
     
-    .title-3 {
+    .title-3, h3 {
         font-weight: 600;
         font-size: 18px;
         line-height: 29px;
         text-transform: uppercase;
     }
     
-    .title-4 {
-        font-weight: 500;
+    .title-4, h4 {
+        font-weight: 600;
         font-size: 16px;
         line-height: 23px;
         text-transform: uppercase;
     }
-    .subtitle-1 {
+    .subtitle-1, h5 {
         font-size: 16px;
         line-height: 24px;
     }
-    .subtitle-2 {
+    .subtitle-2, h6 {
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
@@ -2332,8 +2358,8 @@ b {
         min-width: 40px;
     }
     .nav-toggle {
-        width: 40px;
-        height: 40px;
+        width: 32px;
+        height: 32px;
         padding: 4px;
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z' fill='white'/%3E%3C/svg%3E%0A");
         background-size: 32px;
@@ -2357,6 +2383,9 @@ b {
     .header-nav ul li {
         width: 100%;
         margin-bottom: 24px;
+    }
+    .header-lang .dropdown-menu li {
+        margin-bottom: 16px;
     }
     .header-nav-footer {
         margin-top: 16px;
@@ -2447,7 +2476,7 @@ b {
         display: none;
     }
     .home-category {
-        margin-bottom: 16px;
+        margin-bottom: 24px;
     }
     .articles-grid {
         flex-direction: column;
@@ -2485,7 +2514,7 @@ b {
         height: 389px;
     }
     .subscribe {
-        margin: 24px 0 48px;
+        margin: 32px 0 48px;
     }
     .subscribe-content {
         max-width: 342px;
@@ -2529,6 +2558,14 @@ b {
 @media (max-width: 460px) {
     .container {
         padding: 0 16px;
+    }
+    .btn-fab .rg {
+        width: 24px;
+        height: 24px;
+    }
+    .header-search .btn-fab .rg {
+        width: 32px;
+        height: 32px;
     }
     .recent-articles {
         margin: 16px 0 24px;
@@ -2588,4 +2625,5 @@ b {
     .subscribe-text {
         text-align: left;
     }
+    
 }
