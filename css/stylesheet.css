@@ -1447,7 +1447,7 @@ b {
     padding: 8px;
     background-color: rgba(164, 164, 168, 0.1);
 }
-.header-nav-footer .btn-fab:hover {
+.header-nav-footer .btn-fab:hover, .header-nav-footer .btn-fab:target {
     background-color: rgba(229, 229, 230, 0.15);
 }
 .header-nav-footer .header-about {
@@ -1826,7 +1826,7 @@ b {
     padding: 10px;
     border-radius: 6px;
     background: transparent;
-    transition: background .2s ease-in;
+    transition: background .3s ease-out;
 }
 .article-item:hover .article-wrap {
     background: rgba(164, 164, 168, 0.1);
@@ -1846,10 +1846,10 @@ b {
     object-position: center;
     vertical-align: middle;
     border-radius: 6px;
-    transition: transform .2s ease-in;
+    transition: transform .3s ease-out;
 }
 .article-item:hover .article-image img {
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 .article-heading {
     margin-bottom: 8px;
@@ -2139,7 +2139,7 @@ b {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px;
+    padding: 24px 24px 40px;
     color: #19191A;
 }
 .subscribe-icon {
@@ -2171,11 +2171,15 @@ b {
     position: absolute;
     top: 6px;
     right: 6px;
+    height: 37px;
+    min-height: 37px;
     padding: 6.5px 16px;
 }
 .subscribe input {
     display: block;
     width: 100%;
+    height: 49.6px;
+    min-height: 49.6px;
     padding-right: 95px;
 }
 .subscribe-text {
@@ -2216,7 +2220,7 @@ b {
     color: #FFFFFF;
 }
 .footer-links a:hover {
-    color: #1252DE;
+    color: #4278F0;
 }
 .footer .btn-fab {
     padding: 8px;
@@ -2351,6 +2355,12 @@ b {
     .btn-fab {
         padding: 4px;
     }
+    .btn-fab:hover, .btn-link-nav:hover {
+        background-color: transparent;
+    }
+    .header-nav-footer .btn-fab:hover, .footer .btn-fab:hover {
+        background-color: rgba(164, 164, 168, 0.15);
+    }
     .btn-fab .rg {
         width: 32px;
         height: 32px;
@@ -2367,6 +2377,9 @@ b {
         padding: 4px;
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z' fill='white'/%3E%3C/svg%3E%0A");
         background-size: 32px;
+    }
+    .nav-toggle:hover, .header-search .btn-fab {
+        background-color: transparent;
     }
     .header-nav {
         top: 96px;
@@ -2477,6 +2490,18 @@ b {
     }
     .access-caption {
         display: none;
+    }
+    .article-item:hover .article-wrap {
+        background: transparent;
+    }
+    .article-item:hover .article-image img {
+        transform: unset;
+    }
+    .article-item:active .article-wrap {
+        background: rgba(164, 164, 168, 0.1);
+    }
+    .article-item:active .article-image img {
+        transform: scale(1.07);
     }
     .home-category {
         margin-bottom: 24px;
