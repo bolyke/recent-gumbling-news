@@ -2497,12 +2497,6 @@ b {
     .article-item:hover .article-image img {
         transform: unset;
     }
-    .article-item:active .article-wrap {
-        background: rgba(164, 164, 168, 0.1);
-    }
-    .article-item:active .article-image img {
-        transform: scale(1.07);
-    }
     .home-category {
         margin-bottom: 24px;
     }
