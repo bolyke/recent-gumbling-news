@@ -110,19 +110,36 @@
 
   <div class="news-page">
     <div class="breadcrumbs">
-      <ul>
-        <li>
-          <a href="/" class="btn-link-nav">main page</a>
-        </li>
-        <li>
-          <a href="/" class="btn-link-nav">Casino</a>
-        </li>
-      </ul>
+      <div class="container">
+        <ul>
+          <li>
+            <a href="/" class="btn-link-nav">Main page</a>
+          </li>
+          <li>
+            <a href="/" class="btn-link-nav">Casino</a>
+          </li>
+          <li>
+            <span>Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="news-container container">
       <div class="news-left">
         <div class="news-wrapper">
-          <div class="news-times">
+          <div class="news-info d-none d-sm-flex">
+            <div class="news-author">
+              <div class="author-avatar"><img src="images/authors/author-1.png" alt="Avatar"></div>
+              <div class="d-flex flex-column align-start justify-center">
+                <a class="author-name" href="/">by Wade Warren</a>
+                <div class="article-times">
+                  <span class="article-date">April 13, 2023</span>
+                  <span class="article-time">3 min read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="article-times d-sm-none">
             <span class="article-date">April 13, 2023</span>
             <span class="article-time">3 min read</span>
           </div>
@@ -132,6 +149,30 @@
           <div class="news-caption">
             Nulla facilisi. Integer tempus elementum tellus, at iaculis dui aliq
           </div>
+          <div class="share-news-mob dropdown d-none">
+            <a href="javascript:;" class="dropdown-toggle btn-default"><i class="rg rg-share"></i> Share</a>
+            <ul class="dropdown-menu dropdown-left">
+              <!-- Можна використовувати це як приклад для Вордпресу -->
+              <!-- 
+              <li><button class="btn-copy" data-link="<?php echo get_permalink(); ?>" data-title="<?php echo the_title(); ?>"><i class="rg rg-copy-grey"></i> Copy link</button></li>
+              <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" class="fb-xfbml-parse-ignore" target="_blank"><i class="rg rg-facebook-grey"></i> Share on Facebook</a></li>
+              <li><a href="https://twitter.com/intent/tweet?original_referer=<?php echo get_site_url(); ?>&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&url=<?php echo get_permalink(); ?>&text=<?php echo the_title(); ?>" target="_blank"><i class="rg rg-twitter-grey"></i> Share on Twitter</a></li> -->
+
+              <!-- Статичний варіант -->
+              <li>
+                <button class="btn-copy" data-link="https://bolyke.github.io/news-article.html" data-title="Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum"><i class="rg rg-copy-grey"></i> Copy link</button>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://bolyke.github.io/news-article.html" class="fb-xfbml-parse-ignore" target="_blank"><i class="rg rg-facebook-grey"></i> Share on Facebook</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/intent/tweet?original_referer=https://bolyke.github.io&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&url=https://bolyke.github.io/news-article.html&text=Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum" target="_blank"><i class="rg rg-twitter-grey"></i> Share on Twitter</a>
+              </li>
+            </ul>
+            <div class="popup share-popup">
+              Link was copied!
+            </div>
+          </div>
           <div class="news-thumbnail">
             <img src="images/articles/article-2.jpg" alt="">
             <div class="thumbnail-label">
@@ -139,119 +180,429 @@
             </div>
           </div>
           <div class="news-content">
-            <div class="news-author">
+            <div class="news-author d-sm-none">
               <div class="author-avatar"><img src="images/authors/author-1.png" alt="Avatar"></div>
               <a class="author-name" href="/">Wade Warren</a>
               <span class="author-role">Reporter</span>
             </div>
-            <div class="news-text">
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam <b>nec interdum ultricies</b>, nibh tortor maximus
-                nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna tincidunt at.
-              </p>
-              <p>
-                Nunc vulputate diam <b>ac lacus <span class="text-primary">congue pellentesque</span></b>. Nulla neque urna, consectetur ultrices lorem ac, sodales fermentum
-                velit. Aenean elit odio, ullamcorper sed porttitor sit amet, <b>varius sit amet</b> tellus. Nulla ullamcorper augue non ipsum
-                facilisis, eget tincidunt risus rutrum.
-              </p>
-              <p>Nunc vulputate diam ac lacus congue pellentesque:</p>
-              <ul>
-                <li>Duis eleifend arcu neque, ac accumsan urna commodo eu</li>
-                <li>Enean auctor, quam nec interdum ultricies, nibh tortor maximus nisi</li>
-                <li>Quam nec interdum ultricies</li>
-              </ul>
-              <h2>
-                Lobortis libero
-              </h2>
-              <p>
-                Nunc vulputate diam ac lacus congue pellentesque. <b>Nulla neque urna, consectetur ultrices lorem ac</b>, sodales fermentum
-                velit. Aenean elit odio, ullamcorper <a href="/">sed porttitor</a> sit amet, varius sit amet tellus. Nulla ullamcorper augue non ipsum
-                facilisis, eget tincidunt risus rutrum. Nunc lorem nulla, pulvinar non quam sit amet, tincidunt lobortis libero. Nam in
-                nisi ligula. Praesent lacinia dui quis leo efficitur semper ut lobortis augue. Nunc enim elit, elementum lobortis
-                ultricies sit amet, commodo sed lacus. Nulla imperdiet eros a magna molestie mollis. Nunc lorem lectus, feugiat vel
-                lobortis et, lobortis varius justo. Curabitur a enim risus.
-              </p>
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor <b>maximus</b>
-                nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna tincidunt at.
-              </p>
-
-
-              <h2>
-                Nulla neque urna
-              </h2>
-              <p>
-                Nunc vulputate diam ac lacus congue pellentesque. Nulla neque urna, consectetur ultrices lorem ac, sodales fermentum
-                velit. Aenean elit odio, ullamcorper <a href="/">sed porttitor</a> sit amet, varius sit amet tellus.
-              </p>
-              <h3>
-                Nulla urna
-              </h3>
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus
-                nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna tincidunt at.
-              </p>
-              <h3>
-                Praesent lacinia
-              </h3>
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus
-                nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna tincidunt at.
-              </p>
-              <p>
-                Nulla ullamcorper augue non ipsum facilisis, eget tincidunt risus rutrum. Nunc lorem nulla, pulvinar non quam sit amet,
-                tincidunt lobortis libero. Nam in nisi ligula. Praesent lacinia dui quis leo efficitur semper ut lobortis augue. Nunc
-                enim elit, elementum lobortis ultricies sit amet, commodo sed lacus. Nulla imperdiet eros a magna molestie mollis. Nunc
-                lorem lectus, feugiat vel lobortis et, lobortis varius justo. Curabitur a enim risus.
-              </p>
-              <h3>
-                FAlla MORONA
-              </h3>
-              <h4>
-                maximus
-              </h4>
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus
-                nisi.
-              </p>
-              <p>
-                Arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus nisi. Duis
-                eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus nis.
-              </p>
-              <h4>
-                interdum AC
-              </h4>
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus
-                nis.Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor
-                maximus nis.
-              </p>
-              <h2>
-                Lobortis libero
-              </h2>
-              <p>
-                Nunc vulputate diam ac lacus congue pellentesque. <b>Nulla neque urna, consectetur ultrices lorem ac</b>, sodales fermentum
-                velit. Aenean elit odio, ullamcorper <a href="/">sed porttitor</a> sit amet, varius sit amet tellus. Nulla ullamcorper augue non ipsum
-                facilisis, eget tincidunt risus rutrum. Nunc lorem nulla, pulvinar non quam sit amet, tincidunt lobortis libero. .
-              </p>
-              <div>
-                <img src="image/articles/recent-2.jpg" alt="">
-                <figcaption> Nunc vulputate diam ac lacus congue</figcaption>
+            <div class="news-text-wrap">
+              <div class="news-text">
+                <p>
+                  Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam <b>nec interdum
+                    ultricies</b>, nibh tortor maximus
+                  nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna
+                  tincidunt at.
+                </p>
+                <p>
+                  Nunc vulputate diam <b>ac lacus <a href="/">congue pellentesque</a></b>. Nulla neque
+                  urna, consectetur ultrices lorem ac, sodales fermentum
+                  velit. Aenean elit odio, ullamcorper sed porttitor sit amet, <b>varius sit amet</b> tellus. Nulla
+                  ullamcorper augue non ipsum
+                  facilisis, eget tincidunt risus rutrum.
+                </p>
+                <p>Nunc vulputate diam ac lacus congue pellentesque:</p>
+                <ul>
+                  <li>Duis eleifend arcu neque, ac accumsan urna commodo eu</li>
+                  <li>Enean auctor, quam nec interdum ultricies, nibh tortor maximus nisi</li>
+                  <li>Quam nec interdum ultricies</li>
+                </ul>
+                <h2>
+                  Lobortis libero
+                </h2>
+                <p>
+                  Nunc vulputate diam ac lacus congue pellentesque. <b>Nulla neque urna, consectetur ultrices lorem
+                    ac</b>, sodales fermentum
+                  velit. Aenean elit odio, ullamcorper <a href="/">sed porttitor</a> sit amet, varius sit amet tellus.
+                  Nulla ullamcorper augue non ipsum
+                  facilisis, eget tincidunt risus rutrum. Nunc lorem nulla, pulvinar non quam sit amet, tincidunt lobortis
+                  libero. Nam in
+                  nisi ligula. Praesent lacinia dui quis leo efficitur semper ut lobortis augue. Nunc enim elit, elementum
+                  lobortis
+                  ultricies sit amet, commodo sed lacus. Nulla imperdiet eros a magna molestie mollis. Nunc lorem lectus,
+                  feugiat vel
+                  lobortis et, lobortis varius justo. Curabitur a enim risus.
+                </p>
+                <p>
+                  <span class="bg-yellow">Duis eleifend arcu neque, ac accumsan urna commodo eu.</span> Aenean auctor, quam nec interdum
+                  ultricies, nibh Aenean auctor, quam nec interdum ultricies, nibh tortor <b>maximus</b> nisi, sed vulputate ligula lacus
+                  dapibus quam. Integer condimentum maximus tortor, ac luctus magna tincidunt at.
+                </p>
+                <a href="/" class="also-read">
+                  <span class="also-link btn-link text-blue">Also read</span>
+                  <div class="also-name title-2">
+                    Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing 
+                  </div>
+                  <div class="article-times">
+                    <span class="article-date">1 day ago</span>
+                    <span class="article-time">3 min read</span>
+                  </div>
+                </a>
+                <h2>
+                  Nulla neque urna
+                </h2>
+                <p>
+                  Nunc vulputate diam ac lacus congue pellentesque. Nulla neque urna, consectetur ultrices lorem ac,
+                  sodales fermentum
+                  velit. Aenean elit odio, ullamcorper <a href="/">sed porttitor</a> sit amet, varius sit amet tellus.
+                </p>
+                <h3>
+                  Nulla urna
+                </h3>
+                <p>
+                  Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh
+                  tortor maximus
+                  nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna
+                  tincidunt at.
+                </p>
+                <h3>
+                  Praesent lacinia
+                </h3>
+                <p>
+                  Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh
+                  tortor maximus
+                  nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna
+                  tincidunt at.
+                </p>
+                <blockquote>
+                  <p>
+                    Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus nisi, sed vulputate ligula lacus dapibus quam. 
+                  </p>
+                  <cite>— Stuart Cameron, CEO, Wesley Mission</cite>
+                </blockquote>
+                <p>
+                  Nulla ullamcorper augue non ipsum facilisis, eget tincidunt risus rutrum. Nunc lorem nulla, pulvinar non
+                  quam sit amet,
+                  tincidunt lobortis libero. Nam in nisi ligula. Praesent lacinia dui quis leo efficitur semper ut
+                  lobortis augue. Nunc
+                  enim elit, elementum lobortis ultricies sit amet, commodo sed lacus. Nulla imperdiet eros a magna
+                  molestie mollis. Nunc
+                  lorem lectus, feugiat vel lobortis et, lobortis varius justo. Curabitur a enim risus.
+                </p>
+                <h3>
+                  FAlla MORONA
+                </h3>
+                <h4>
+                  maximus
+                </h4>
+                <p>
+                  Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh
+                  tortor maximus
+                  nisi.
+                </p>
+                <p>
+                  Arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor maximus
+                  nisi. Duis
+                  eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh
+                  tortor maximus nis.
+                </p>
+                <h4>
+                  interdum AC
+                </h4>
+                <p>
+                  Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh
+                  tortor maximus
+                  nis.Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies,
+                  nibh tortor
+                  maximus nis.
+                </p>
+                <h2>
+                  Lobortis libero
+                </h2>
+                <p>
+                  Nunc vulputate diam ac lacus congue pellentesque. <b>Nulla neque urna, consectetur ultrices lorem
+                    ac</b>, sodales fermentum
+                  velit. Aenean elit odio, ullamcorper <a href="/">sed porttitor</a> sit amet, varius sit amet tellus.
+                  Nulla ullamcorper augue non ipsum
+                  facilisis, eget tincidunt risus rutrum. Nunc lorem nulla, pulvinar non quam sit amet, tincidunt lobortis
+                  libero. .
+                </p>
+                <div class="news-image">
+                  <img src="images/articles/recent-2.jpg" alt="">
+                  <figcaption> Nunc vulputate diam ac lacus congue</figcaption>
+                </div>
+                <p>
+                  <span class="bg-yellow">Duis eleifend arcu neque, ac accumsan urna commodo eu.</span> Aenean auctor, quam nec interdum ultricies, nibh
+                  tortor <b>maximus</b>
+                  nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna
+                  tincidunt at.
+                </p>
               </div>
-              <p>
-                Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum ultricies, nibh tortor <b>maximus</b>
-                nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor, ac luctus magna tincidunt at.
-              </p>
+              <div class="news-faq">
+                <div class="title-2">FAQ</div>
+                <div class="faq-content accordion">
+                  <div class="accordion-content">
+                    <div class="accordion-item">
+                      <span class="accordion-heading">Nunc vulputate diam ac lacus congue pellentese?</span>
+                      <p class="accordion-text">Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum
+                        ultricies, nibh tortor maximus nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor,
+                        ac luctus magna tincidunt at. </p>
+                    </div>
+                    <div class="accordion-item">
+                      <span class="accordion-heading">Aenean auctor, quam nec interdum ultricies vulputate diamvulputate diam?</span>
+                      <p class="accordion-text">Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum
+                        ultricies, nibh tortor maximus nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor,
+                        ac luctus magna tincidunt at. </p>
+                    </div>
+                    <div class="accordion-item">
+                      <span class="accordion-heading">Nunc vulputate diam ac lacus congue pellesque?</span>
+                      <p class="accordion-text">Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum
+                        ultricies, nibh tortor maximus nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor,
+                        ac luctus magna tincidunt at. </p>
+                    </div>
+                    <div class="accordion-item">
+                      <span class="accordion-heading">Nunc vulputate diam ac lacus congue vrlacus pellentesque?</span>
+                      <p class="accordion-text">Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum
+                        ultricies, nibh tortor maximus nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor,
+                        ac luctus magna tincidunt at. </p>
+                    </div>
+                    <div class="accordion-item">
+                      <span class="accordion-heading">Nunc vulputate diam ac lacus congue pellentese?</span>
+                      <p class="accordion-text">Duis eleifend arcu neque, ac accumsan urna commodo eu. Aenean auctor, quam nec interdum
+                        ultricies, nibh tortor maximus nisi, sed vulputate ligula lacus dapibus quam. Integer condimentum maximus tortor,
+                        ac luctus magna tincidunt at. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news-tag">
+                <a href="/" class="tag">India</a>
+                <a href="/" class="tag">technology</a>
+                <a href="/" class="tag">2023</a>
+                <a href="/" class="tag">Ukraine</a>
+                <a href="/" class="tag">India</a>
+                <a href="/" class="tag">technology</a>
+                <a href="/" class="tag">2023</a>
+                <a href="/" class="tag">Ukraine</a>
+                <a href="/" class="tag">India</a>
+                <a href="/" class="tag">technology</a>
+                <a href="/" class="tag">2023</a>
+                <a href="/" class="tag">Ukraine</a>
+              </div>
+              <div class="share-news-mob dropdown d-none">
+                <a href="javascript:;" class="dropdown-toggle btn-default"><i class="rg rg-share"></i> Share</a>
+                <ul class="dropdown-menu dropdown-left">
+                  <!-- Можна використовувати це як приклад для Вордпресу -->
+                  <!-- 
+                  <li><button class="btn-copy" data-link="<?php echo get_permalink(); ?>" data-title="<?php echo the_title(); ?>"><i class="rg rg-copy-grey"></i> Copy link</button></li>
+                  <li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" class="fb-xfbml-parse-ignore" target="_blank"><i class="rg rg-facebook-grey"></i> Share on Facebook</a></li>
+                  <li><a href="https://twitter.com/intent/tweet?original_referer=<?php echo get_site_url(); ?>&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&url=<?php echo get_permalink(); ?>&text=<?php echo the_title(); ?>" target="_blank"><i class="rg rg-twitter-grey"></i> Share on Twitter</a></li> -->
+    
+                  <!-- Статичний варіант -->
+                  <li>
+                    <button class="btn-copy" data-link="https://bolyke.github.io/news-article.html" data-title="Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum"><i class="rg rg-copy-grey"></i> Copy link</button>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://bolyke.github.io/news-article.html" class="fb-xfbml-parse-ignore" target="_blank"><i class="rg rg-facebook-grey"></i> Share on Facebook</a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/intent/tweet?original_referer=https://bolyke.github.io&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&url=https://bolyke.github.io/news-article.html&text=Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum" target="_blank"><i class="rg rg-twitter-grey"></i> Share on Twitter</a>
+                  </li>
+                </ul>
+                <div class="popup share-popup">
+                  Link was copied!
+                </div>
+              </div>
+              <div class="news-about-author">
+                <div class="d-flex flex-row align-center mb-3">
+                  <div class="author-avatar"><img src="images/authors/author-1.png" alt="Avatar"></div>
+                  <div class="d-flex flex-column align-start justify-center">
+                    <a class="author-name" href="/">Wade Warren</a>
+                    <span class="author-role">Reporter</span>
+                  </div>
+                </div>
+                <div class="author-caption">
+                  Wade is a reporter at RGN. He has previously covered Ukrainian foreign policy, the Middle East and North Africa. 
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
-      <div class="news-right">
+      <div class="news-right d-sm-none">
+        <div class="most-read">
+          <div class="most-read-title category-title">Articles most read by users</div>
+          <div class="most-read-content">
+            <div class="most-read-item">
+              <a href="/" class="most-read-name">Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing </a>
+            </div>
+            <div class="most-read-item">
+              <a href="/" class="most-read-name">Duis Eleifend Arcu Neque</a>
+            </div>
+            <div class="most-read-item">
+              <a href="/" class="most-read-name">Dolor Sit Amet Consectetur Adipiscing Duis Eleifend Arcu Neque</a>
+            </div>
+            <div class="most-read-item">
+              <a href="/" class="most-read-name">Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing </a>
+            </div>
+            <div class="most-read-item">
+              <a href="/" class="most-read-name">Duis Eleifend Adipiscing Hodend Arcu Neque</a>
+            </div>
+          </div>
+        </div>
+        <div class="share-news">
+          <div class="share-list">
+            <!-- Можна використовувати це як приклад для Вордпресу -->
+            <!-- <button class="btn-copy" data-link="<?php echo get_permalink(); ?>" data-title="<?php echo the_title(); ?>"><i class="rg rg-copy"></i></button>
+            <a href="https://twitter.com/intent/tweet?original_referer=<?php echo get_site_url(); ?>&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&url=<?php echo get_permalink(); ?>&text=<?php echo the_title(); ?>" target="_blank"><i class="rg rg-twitter"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" class="fb-xfbml-parse-ignore" target="_blank"><i class="rg rg-facebook"></i></a> -->
 
+            <!-- Статичний варіант -->
+            <button class="btn-copy" data-link="https://bolyke.github.io/news-article.html" data-title="Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum"><i class="rg rg-copy-primary"></i></button>
+            <a href="https://twitter.com/intent/tweet?original_referer=https://bolyke.github.io&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&url=https://bolyke.github.io/news-article.html&text=Lorem Ipsum Dolor Sit Amet Consect Adipiscing Jsum" target="_blank"><i class="rg rg-twitter-primary"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://bolyke.github.io/news-article.html" class="fb-xfbml-parse-ignore" target="_blank"><i class="rg rg-facebook-primary"></i></a>
+          </div>
+          <div class="share-text">
+            You can share this article!
+          </div>
+        </div>
       </div>
     </div>
-   
+
+    <div class="subscribe subscribe-grey">
+      <div class="container">
+        <div class="subscribe-inner blue-card">
+          <i class="subscribe-icon rg rg-arrow-blue"></i>
+          <div class="subscribe-content">
+            <div class="subscribe-title title-2">ENJOY THE READ? JOIN OUR WEEKLY NEWSLETTER</div>
+            <form class="subscribe-form">
+              <div class="form-group">
+                <input type="email" name="email" class="form-field" placeholder="Enter your email">
+                <button class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            <div class="subscribe-text">Nulla facilisi. Integer tempus elementum tellus, at iaculis dui aliquam at</div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="home-category">
+      <div class="container">
+        <div class="category-title"><span class="btn-category">more on this topic</span></div>
+        <div class="articles-grid">
+          <!-- Left Part -->
+          <div class="articles-left">
+            <a href="/" class="article-item">
+              <div class="article-wrap">
+                <div class="article-image">
+                  <img src="images/articles/article-5.jpg" alt="">
+                </div>
+                <div class="article-content">
+                  <div class="article-heading">
+                    <div class="article-category">
+                      <div class="btn-link">BUSINESS</div>
+                    </div>
+                    <span class="article-date">1 day ago</span>
+                  </div>
+                  <div class="article-name">Lorem Ipsum Dolor Sit Amet Consectet</div>
+                  <div class="article-image">
+                    <img src="images/articles/article-5.jpg" alt="">
+                  </div>
+                  <div class="article-caption">
+                    Nulla facilisi. Integer tempus elementum tellus, at iaculis dui aliquam
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Left Part End -->
+          <!-- Right Part -->
+          <div class="articles-right">
+            <a href="/" class="article-item">
+              <div class="article-wrap">
+                <div class="article-image">
+                  <img src="images/articles/recent-3.jpg" alt="">
+                </div>
+                <div class="article-content">
+                  <div class="article-heading">
+                    <div class="article-category">
+                      <div class="btn-link">BUSINESS</div>
+                    </div>
+                    <span class="article-date">1 day ago</span>
+                  </div>
+                  <div class="article-name">Lorem Ipsum Dolor Sit Amet Consectetur</div>
+                  <div class="article-image">
+                    <img src="images/articles/recent-3.jpg" alt="">
+                  </div>
+                  <div class="article-caption">
+                    Nulla facilisi. Integer tempus elementum tellus, at iaculis dui aliquam
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/" class="article-item">
+              <div class="article-wrap">
+                <div class="article-image">
+                  <img src="images/articles/article-3.jpg" alt="">
+                </div>
+                <div class="article-content">
+                  <div class="article-heading">
+                    <div class="article-category">
+                      <div class="btn-link">BUSINESS</div>
+                    </div>
+                    <span class="article-date">1 day ago</span>
+                  </div>
+                  <div class="article-name">Lorem Ipsum Dolor Sit Amet Consectetur</div>
+                  <div class="article-image">
+                    <img src="images/articles/article-3.jpg" alt="">
+                  </div>
+                  <div class="article-caption">
+                    Nulla facilisi. Integer tempus elementum tellus, at iaculis dui aliquam
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/" class="article-item">
+              <div class="article-wrap">
+                <!-- <div class="article-image">
+                    <img src="images/articles/article-3.jpg" alt=""> 
+                  </div> -->
+                <div class="article-content">
+                  <div class="article-heading">
+                    <div class="article-category">
+                      <div class="btn-link">BUSINESS</div>
+                    </div>
+                    <span class="article-date">1 day ago</span>
+                  </div>
+                  <div class="article-name">Lorem Ipsum Dolor Sit Amet Consectetur</div>
+                  <!-- <div class="article-image">
+                      <img src="images/articles/article-3.jpg" alt=""> 
+                    </div> -->
+                  <div class="article-caption">
+                    Nulla facilisi. Integer tempus elementum tellus, at iaculis dui aliquam
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Right Part End -->
+        </div>
+      </div>
+    </div>
+
+    <div class="most-read d-none d-sm-flex">
+      <div class="container">
+        <div class="most-read-title category-title">Articles most read by users</div>
+        <div class="most-read-content">
+          <div class="most-read-item">
+            <a href="/" class="most-read-name">Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing </a>
+          </div>
+          <div class="most-read-item">
+            <a href="/" class="most-read-name">Duis Eleifend Arcu Neque</a>
+          </div>
+          <div class="most-read-item">
+            <a href="/" class="most-read-name">Dolor Sit Amet Consectetur Adipiscing Duis Eleifend Arcu Neque</a>
+          </div>
+          <div class="most-read-item">
+            <a href="/" class="most-read-name">Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing </a>
+          </div>
+          <div class="most-read-item">
+            <a href="/" class="most-read-name">Duis Eleifend Adipiscing Hodend Arcu Neque</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
