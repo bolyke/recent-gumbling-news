@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
             item.classList.add("active");
             setTimeout(function () {
               item.classList.remove("active");
-            }, 2500);
+            }, 1500);
           })
           .catch(() => {
           });
