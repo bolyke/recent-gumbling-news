@@ -934,9 +934,6 @@ a.btn-link {
 .btn-link-white::after {
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='15' viewBox='0 0 14 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.73317 11L2.9165 10.1833L8.5165 4.58329L3.49984 4.58329V3.41663L10.4998 3.41663V10.4166H9.33317V5.39996L3.73317 11Z' fill='%23FFFFFF'/%3E%3C/svg%3E%0A");
 }
-.btn-link.text-blue::after {
-    filter: invert(17%) sepia(73%) saturate(6188%) hue-rotate(224deg) brightness(94%) contrast(86%);
-}
 a.btn-link:focus, a.btn-link:active, a.btn-link:hover,
 a.btn-link-white:focus, a.btn-link-white:active, a.btn-link-white:hover {
     color: #1252DE;
