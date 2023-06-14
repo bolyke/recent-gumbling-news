@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       document.querySelector(this.getAttribute('href')).scrollIntoView({
-        block: 'center',
+        block: 'start',
         behavior: 'smooth'
       });
     });
@@ -15,35 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.header').classList.toggle('nav-active');
     document.querySelector('body').classList.toggle('unscroll');
   })
-
-  //header search 
-  // document.querySelector('.search-open').addEventListener('click', () => {
-  //     document.querySelector('.header-search').classList.add('active');
-  // })
-  // document.querySelector('.search-close').addEventListener('click', () => {
-  //     document.querySelector('.header-search').classList.remove('active');
-  // })
-
-  // if (document.querySelector('.search')) {
-  //     document.querySelectorAll('.search input').forEach((item) => {
-  //         item.addEventListener('input', () => {
-  //             item.parentNode.parentNode.querySelector('.search-result').classList.add('active');
-  //         })
-  //     })
-
-  //     document.body.addEventListener('click', function (e) {
-  //         if (document.querySelector('.search-result.active')) {
-  //             document.querySelector('.search-result.active').classList.remove('active');
-  //         }
-  //     }, true);
-  // }
-
-  // window.addEventListener('resize', () => {
-  //     if (window.innerWidth > 768) {
-  //         if (swiperPopular.)
-  //         swiperPopular.destroy(true, true);
-  //     }
-  // })
 
   // Home Popular slider Swiper
   var swiperPopular = Swiper;
@@ -119,13 +90,13 @@ document.addEventListener('DOMContentLoaded', function () {
       navigator.clipboard
         .writeText(textCopy)
         .then(() => {
-          if (window.innerWidth > 960) {
-            document.querySelector('.share-news .share-text').textContent = 'Link was copied!';
+          if (item.closest('.share').querySelector('.share-text')) {
+            document.querySelector('.share .share-text').textContent = 'Link was copied!';
           } else {
-            document.querySelector('.share-news-mob .share-popup').classList.add('active');
+            item.closest('.share').querySelector('.popup').classList.add("active");
             setTimeout(function () {
-              document.querySelector('.share-news-mob .share-popup.active').classList.remove('active');
-            }, 2500);
+              item.closest('.share').querySelector('.popup').classList.remove("active");
+            }, 1500);
           }
         })
         .catch(() => {
@@ -138,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // (Optional) Active an item if it has the class "is-active"  
     document.querySelector('.accordion-content .accordion-item.active');
 
-    document.querySelectorAll('.accordion-content .accordion-item > span').forEach((item) => {
+    document.querySelectorAll('.accordion-content .accordion-item > .accordion-heading').forEach((item) => {
       item.addEventListener('click', function () {
         //event.preventDefault();
         // Cancel the siblings
