@@ -50,6 +50,38 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Browse Guide - scroll shadow on mobile
+  if (window.innerWidth < 768 && document.querySelector('.browse .tabs')) {
+    document.querySelector('.browse .tabs').addEventListener('scroll', (e) => {
+      let tabsW = e.target.parentElement;
+      let tabs = e.target;
+      if (tabs.scrollLeft < 5) {
+        tabsW.style.setProperty('--tabs-before', '0');
+      } else {
+        tabsW.style.setProperty('--tabs-before', '1');
+      }
+      if (tabs.scrollLeft > tabs.scrollWidth - tabs.offsetWidth - 5) {
+        tabsW.style.setProperty('--tabs-after', '0');
+      } else {
+        tabsW.style.setProperty('--tabs-after', '1');
+      }
+    })
+  }
+
+  // Show Blog Articles on Mobile
+  const buttonShowArticles = document.querySelector('.btn-show-articles');
+  if (buttonShowArticles) {
+    buttonShowArticles.addEventListener('click', () => {
+      let items = buttonShowArticles.parentElement.querySelectorAll('.article-item');
+      items.forEach(item => {
+        if (!item.classList.contains('d-block')) {
+          item.classList.add('d-block');
+        }
+        buttonShowArticles.classList.add('d-none');
+      })
+    })
+  }
+
   // Share News
   const buttonShare = document.querySelectorAll('.btn-share');
 
@@ -125,6 +157,26 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     })
   } 
+
+  // Tabs 
+  if (document.querySelector('.tabs')) {
+    const tabs = document.querySelectorAll('[data-tab-target]')
+    const tabContents = document.querySelectorAll('[data-tab-content]')
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget)
+        tabContents.forEach(tabContent => {
+          tabContent.classList.remove('active')
+        })
+        tabs.forEach(tab => {
+          tab.classList.remove('active')
+        })
+        tab.classList.add('active')
+        target.classList.add('active')
+      })
+    })
+  }
 
 });
 
