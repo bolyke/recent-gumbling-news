@@ -4757,9 +4757,11 @@ b {
     .browse .tabs-wrapper {
         position: relative;
         /* margin: 0 -32px; */
+        --tabs-before: -1;
+        --tabs-after-opacity: 0;
         --tabs-after: 1;
-        --tabs-before: 0;
-        transition: all .2s ease-in;
+        --tabs-before-opacity: 1;
+        transition: all .2s .2s ease-in;
     }
     .browse .tabs {
         justify-content: flex-start;
@@ -4773,9 +4775,10 @@ b {
         top: 0;
         height: 100%;
         width: 70px;
-        opacity: var(--tabs-after);
+        z-index: var(--tabs-after);
+        opacity: var(--tabs-after-opacity);
         background: linear-gradient(90deg, rgba(217, 217, 217, 0) 0%, #FBFBFB 100%);
-        transition: all .2s ease-in;
+        transition: all .2s .2s ease-in;
     }
     .browse .tabs-wrapper::before {
         content: '';
@@ -4784,9 +4787,10 @@ b {
         top: 0;
         height: 100%;
         width: 70px;
-        opacity: var(--tabs-before);
+        z-index: var(--tabs-before);
+        opacity: var(--tabs-before-opacity);
         background: linear-gradient(-90deg, rgba(217, 217, 217, 0) 0%, #FBFBFB 100%);
-        transition: all .2s ease-in;
+        transition: all .2s .2s ease-in;
     }
     .browse-tab-item {
         width: calc(50% - 12px);

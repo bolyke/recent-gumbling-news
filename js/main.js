@@ -53,17 +53,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // Browse Guide - scroll shadow on mobile
   if (window.innerWidth < 768 && document.querySelector('.browse .tabs')) {
     document.querySelector('.browse .tabs').addEventListener('scroll', (e) => {
-      let tabsW = e.target.parentElement;
-      let tabs = e.target;
+      let tabsW = e.target.parentElement,
+      tabs = e.target;
+
       if (tabs.scrollLeft < 5) {
-        tabsW.style.setProperty('--tabs-before', '0');
+        tabsW.style.setProperty('--tabs-before', '-1');
+        tabsW.style.setProperty('--tabs-before-opacity', '0');
       } else {
         tabsW.style.setProperty('--tabs-before', '1');
+        tabsW.style.setProperty('--tabs-before-opacity', '1');
       }
       if (tabs.scrollLeft > tabs.scrollWidth - tabs.offsetWidth - 5) {
-        tabsW.style.setProperty('--tabs-after', '0');
+        tabsW.style.setProperty('--tabs-after', '-1');
+        tabsW.style.setProperty('--tabs-after-opacity', '0');
       } else {
         tabsW.style.setProperty('--tabs-after', '1');
+        tabsW.style.setProperty('--tabs-after-opacity', '1');
       }
     })
   }
