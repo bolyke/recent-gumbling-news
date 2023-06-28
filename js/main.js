@@ -149,15 +149,19 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.accordion-content .accordion-item > .accordion-heading').forEach((item) => {
       item.addEventListener('click', function () {
         //event.preventDefault();
+        let content = item.parentNode.querySelector('.accordion-text');
         // Cancel the siblings
         if (item.parentNode.classList.contains('active')) {
           item.parentNode.classList.remove('active')
+          content.style.maxHeight = 0;
         } else {
           if (document.querySelector('.accordion-content .accordion-item.active')) {
+            document.querySelector('.accordion-content .accordion-item.active .accordion-text').style.maxHeight = 0;
             document.querySelector('.accordion-content .accordion-item.active').classList.remove('active');
           }
           // Toggle the item
           item.parentNode.classList.add('active');
+          content.style.maxHeight = content.scrollHeight + "px";
         }
       });
     })
