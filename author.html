@@ -137,17 +137,11 @@
             <div id="latest" data-tab-content class="active">
               <div class="author-bar d-flex justify-space-between align-center">
                 <div class="author-total"><i class="rg rg-wifi"></i><b>1,696 articles</b> found</div>
-                <div class="dropdown author-sort">
-                  <a href="javascript:;" class="dropdown-toggle btn-default">All <span class="rg rg-forward"></span></a>
-                  <ul class="dropdown-menu dropdown-right">
-                    <li>
-                      <a href="/">Latest</a>
-                    </li>
-                    <li>
-                      <a href="/">Popular</a>
-                    </li>
-                  </ul>
-                </div>
+                <select name="select" class="author-sort">
+                  <option value="all" selected>All</option>
+                  <option value="latest">Latest</option>
+                  <option value="popular">Popular</option>
+                </select>
               </div>
               <div class="author-articles">
                 <a href="/" class="article-item">
@@ -241,7 +235,7 @@
               </div>
             </div>
             <div id="archive" data-tab-content>
-              <div class="author-archive accordion">
+              <div class="author-archive accordion accordion-multiple">
                 <div class="accordion-content">
                   <div class="accordion-item">
                     <span class="accordion-heading">
