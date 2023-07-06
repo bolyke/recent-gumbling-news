@@ -99,7 +99,7 @@
           </ul>
         </div>
         <div class="header-search">
-          <a href="" class="btn-fab"><i class="rg rg-search"></i></a>
+          <a href="#searchModal" class="btn-fab search-toggle jsModalTrigger"><i class="rg rg-search"></i></a>
         </div>
       </div>
     </div>
@@ -633,6 +633,78 @@
       </div>
     </div>
   </footer>
+
+  <div id="searchModal" class="modal search-modal">
+    <div class="modal__overlay jsOverlay"></div>
+    <div class="modal__container">
+      <button class="modal__close jsModalClose"><i class="rg rg-close"></i></button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <input class="search-field" type="text" name="search" placeholder="Search articles, tags and authors">
+        </div>
+        <div class="modal-body">
+          <div class="search-result">
+            <div class="search-not-found d-none">
+              No matches found
+            </div>
+            <div class="search-loading d-none">
+              <i class="rg rg-loading"></i>Please wait...
+            </div>
+            <div class="search-authors d-none">
+              <div class="search-caption">AUTHORS</div>
+              <a href="/" class="search-item">
+                <div class="author-avatar">
+                  <img src="/images/authors/author-1.png" alt="">
+                </div>
+                <span>Den Warren</span>
+              </a>
+              <a href="/" class="search-item">
+                <div class="author-avatar">
+                  <img src="/images/authors/author-4.png" alt="">
+                </div>
+                <span>Daniella Marmenned</span>
+              </a>
+              <a href="/" class="search-item">
+                <div class="author-avatar">
+                  <!-- empty avatar -->
+                </div>
+                <span>Tom O’Donnell</span>
+              </a>
+            </div>
+            <div class="search-tags d-none">
+              <div class="search-caption">TAGS</div>
+              <a href="/" class="search-item">
+                <span>Drones</span>
+              </a>
+              <a href="/" class="search-item">
+                <span>Debit</span>
+              </a>
+            </div>
+            <div class="search-articles d-none">
+              <div class="search-caption">ARTICLES</div>
+              <a href="/" class="search-item">
+                <div class="article-name">
+                  Defense Ministry: Ukraine advances 2 kilometers in multiple directions
+                </div>
+                <div class="article-caption">
+                  Nulla facilisi. Integer dempus elementum jbcs gartina dsn...
+                </div>
+              </a>
+              <a href="/" class="search-item">
+                <div class="article-name">
+                  Defense Ministry: Ukraine advances 2 kilometers in multiple directions
+                </div>
+                <div class="article-caption">
+                  Nulla facilisi. Integer dempus elementum jbcs gartina dsn...
+                </div>
+              </a>
+              <button class="btn-default search-show-more">Show more <span class="rg rg-forward"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/swiper/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>

@@ -204,6 +204,41 @@ document.addEventListener('DOMContentLoaded', function () {
         var modalWindow = document.getElementById(target);
 
         modalWindow.classList ? modalWindow.classList.add('open') : modalWindow.className += ' ' + 'open';
+
+        if (modalWindow.classList.contains('search-modal')) {
+          setTimeout(() => {
+            document.querySelector('.search-modal .search-field').focus();
+            // Start Search DEMO
+            document.querySelector('.search-field').addEventListener('input', (event) => {
+              let field = event.target;
+              document.querySelector('.search-loading').classList.remove('d-none');
+              document.querySelector('.search-authors').classList.add('d-none');
+              document.querySelector('.search-tags').classList.add('d-none');
+              document.querySelector('.search-articles').classList.add('d-none');
+              document.querySelector('.search-not-found').classList.add('d-none');
+
+              if (field.value == 'D') {
+                setTimeout(() => {
+                  document.querySelector('.search-not-found').classList.add('d-none');
+                  document.querySelector('.search-loading').classList.add('d-none');
+                  document.querySelector('.search-authors').classList.remove('d-none');
+                  document.querySelector('.search-tags').classList.remove('d-none');
+                  document.querySelector('.search-articles').classList.remove('d-none');
+                }, 1000);
+              } else {
+                setTimeout(() => {
+                  document.querySelector('.search-loading').classList.add('d-none');
+                  document.querySelector('.search-authors').classList.add('d-none');
+                  document.querySelector('.search-tags').classList.add('d-none');
+                  document.querySelector('.search-articles').classList.add('d-none');
+                  document.querySelector('.search-not-found').classList.remove('d-none');
+                }, 1000);
+              }
+            })
+            // End Search DEMO
+          }, 300);
+        }
+       
       }
     }
   }
