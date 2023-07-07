@@ -2040,9 +2040,9 @@ b {
 /* ------------------- search ------------------- */
 .search-modal .modal__container {
     max-width: 422px;
-    max-height: 70vh;
+    max-height: calc(100vh - 188px);
     height: auto;
-    top: 15%;
+    top: 62px;
     padding: 0;
     transform: none;
     overflow: hidden;
@@ -2066,7 +2066,7 @@ b {
     box-sizing: border-box;
 }
 .search-result {
-    max-height: calc(70vh - 56px);
+    max-height: calc(100vh - 244px);
     padding: 0;
     overflow-y: auto;
     box-sizing: border-box;
@@ -5642,10 +5642,10 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
         height: 16px;
     }
     .search-modal .modal__container {
-        top: 10%;
-        max-height: 78vh;
+        top: 50px;
+        max-height: calc(100vh - 150px);
     }
     .search-result {
-        max-height: calc(78vh - 56px);
+        max-height: calc(100vh - 206px);
     }
 }
