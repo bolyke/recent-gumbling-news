@@ -204,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var modalWindow = document.getElementById(target);
 
         modalWindow.classList ? modalWindow.classList.add('open') : modalWindow.className += ' ' + 'open';
+        document.querySelector('body').classList.add('unscroll');
 
         if (modalWindow.classList.contains('search-modal')) {
           setTimeout(() => {
@@ -254,6 +255,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var modalWindow = this.parentNode.parentNode;
 
         modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        document.querySelector('body').classList.remove('unscroll');
+
       }
     }
 
@@ -263,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var modalWindow = this.parentNode;
 
         modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        document.querySelector('body').classList.remove('unscroll');
       }
     }
 
