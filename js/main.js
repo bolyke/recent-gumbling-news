@@ -252,11 +252,9 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Set onclick event handler for close buttons */
     for (var i = 0; i < closeButton.length; i++) {
       closeButton[i].onclick = function () {
-        var modalWindow = this.parentNode.parentNode;
-
+        var modalWindow = this.closest('.modal');
         modalWindow.classList ? modalWindow.classList.remove('open') : modalWindow.className = modalWindow.className.replace(new RegExp('(^|\\b)' + 'open'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         document.querySelector('body').classList.remove('unscroll');
-
       }
     }
 
