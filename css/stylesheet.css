@@ -4415,10 +4415,11 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     justify-content: space-between;
 }
 .cookies-text {
-    padding-right: 16px;
+    padding-right: 32px;
     box-sizing: border-box;
     font-size: 14px;
     line-height: 19px;
+    color: #464749;
     flex-shrink: 1;
 }
 .cookies-text b {
