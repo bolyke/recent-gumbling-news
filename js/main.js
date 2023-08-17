@@ -188,6 +188,40 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+  // Directory Search 
+  if (document.querySelector('.directory-search')) {
+    document.querySelector('.directory-search input').addEventListener('input', (e) => {
+      document.querySelector('.directory-search').classList.add('active');
+      // Start Search DEMO
+      let field = event.target;
+      document.querySelector('.directory-search .search-loading').classList.remove('d-none');
+      document.querySelector('.directory-search .search-companies').classList.add('d-none');
+      document.querySelector('.directory-search .search-not-found').classList.add('d-none');
+
+      if (field.value == 'B') {
+        setTimeout(() => {
+          document.querySelector('.directory-search .search-not-found').classList.add('d-none');
+          document.querySelector('.directory-search .search-loading').classList.add('d-none');
+          document.querySelector('.directory-search .search-companies').classList.remove('d-none');
+        }, 1000);
+      } else {
+        setTimeout(() => {
+          document.querySelector('.directory-search .search-loading').classList.add('d-none');
+          document.querySelector('.directory-search .search-companies').classList.add('d-none');
+          document.querySelector('.directory-search .search-not-found').classList.remove('d-none');
+        }, 1000);
+      }
+      // End Search DEMO
+    })
+
+    document.body.addEventListener('click', function (e) {
+      if (document.querySelector('.directory-search.active')) {
+        document.querySelector('.directory-search.active').classList.remove('active');
+      }
+    }, true);
+}
+
+
 });
 
 
