@@ -50,6 +50,36 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // Recentrly added companies - slider Swiper
+  swiperRecently = new Swiper('.companies-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    autoplay: true,
+    delay:  2000,
+    breakpoints: {
+      768: {
+        spaceBetween: 24
+      },
+    }
+  });
+
+
+  // swiperRecently = new Swiper('.companies-swiper', {
+  //   speed: 500,
+  //   slidesPerView: 'auto',
+  //   spaceBetween: 16,
+  //   centeredSlides: false,
+  //   loop: true,
+  //   loopedSlides: 12,
+  //   autoplay: true,
+  //   delay: 2000,
+  //   breakpoints: {
+  //     768: {
+  //       spaceBetween: 24
+  //     }
+  //   }
+  // });
+
   // Browse Guide - scroll shadow on mobile
   if (window.innerWidth < 768 && document.querySelector('.browse .tabs')) {
     document.querySelector('.browse .tabs').addEventListener('scroll', (e) => {

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Directory List - Recent Gambling News</title>
+  <link rel='stylesheet' href='js/swiper/swiper-bundle.css'>
+  <link rel='stylesheet' href='css/stylesheet.css'>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container d-flex align-center justify-space-between">
+      <div class="header-left">
+        <div class="nav-toggle btn-fab"></div>
+        <div class="header-nav">
+          <div class="container">
+            <div class="nav-topics">
+              <div class="nav-heading">Topic</div>
+              <nav class="header-nav-list">
+                <ul>
+                  <li><a href="/" class="btn-link-nav">CASINO</a></li>
+                  <li><a href="/" class="btn-link-nav">BETTING</a></li>
+                  <li><a href="/" class="btn-link-nav">SPORT</a></li>
+                  <li><a href="/" class="btn-link-nav">BLOG</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="nav-heading">Region</div>
+            <nav class="header-nav-list">
+              <ul>
+                <li><a href="/" class="btn-link-nav">Africa</a></li>
+                <li><a href="/" class="btn-link-nav">Asia</a></li>
+                <li><a href="/" class="btn-link-nav">Canada</a></li>
+                <li><a href="/" class="btn-link-nav">Europe</a></li>
+                <li><a href="/" class="btn-link-nav">Australia</a></li>
+                <li><a href="/" class="btn-link-nav">USA</a></li>
+              </ul>
+            </nav>
+            <div class="header-nav-footer">
+              <div class="d-flex flex-row align-center justify-center justify-xs-space-between mb-8">
+                <div class="header-socials d-flex flex-row align-center justify-center">
+                  <a href="/" class="btn-fab mx-1"><i class="rg rg-twitter"></i></a>
+                  <a href="/" class="btn-fab mx-1"><i class="rg rg-instagram"></i></a>
+                  <a href="/" class="btn-fab mx-1"><i class="rg rg-facebook"></i></a>
+                </div>
+                <div class="header-lang dropdown d-none d-xs-flex">
+                  <a href="javascript:;" class="dropdown-toggle btn-fab"><i class="rg rg-web"></i><span
+                      class="lang-current">Eng</span></a>
+                  <ul class="dropdown-menu">
+                    <li class=""><a href="/"><img src="images/locales/English.png" alt="English">English</a></li>
+                    <li class=""><a href="/"><img src="images/locales/Spanish.png" alt="Spanish">Spanish</a></li>
+                    <li class=""><a href="/" class="active"><img src="images/locales/Ukrainian.png"
+                          alt="Ukrainian">Ukrainian</a></li>
+                    <li class=""><a href="/"><img src="images/locales/Polish.png" alt="Polish">Polish</a></li>
+                    <li class=""><a href="/"><img src="images/locales/German.png" alt="German">German</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="header-about text-white text-center">
+                <b>Resentgamblingnews.com</b><br>
+                is the worlds leading independent online gaming authority, providing trusted online
+                casino news, guides, reviews and information since 2010.
+              </div>
+              <div class="header-copyright text-center text-small text-grey">
+                Copyright ©2023 RGN Interactive Inc. All rights reserved.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-menu">
+        <div class="header-menu-group">
+          <a href="/" class="header-link">Casino</a>
+          <a href="/" class="header-link">Betting</a>
+        </div>
+        <a href="/" class="header-logo">
+          <img srcset="images/logo.svg" alt="Recent Gambling News">
+        </a>
+        <div class="header-menu-group">
+          <a href="/" class="header-link">Sport</a>
+          <a href="/" class="header-link">Blog</a>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="header-lang dropdown">
+          <a href="javascript:;" class="dropdown-toggle btn-fab"><i class="rg rg-web"></i></a>
+          <ul class="dropdown-menu">
+            <li class=""><a href="/"><img src="images/locales/English.png" alt="English">English</a></li>
+            <li class=""><a href="/"><img src="images/locales/Spanish.png" alt="Spanish">Spanish</a></li>
+            <li class=""><a href="/" class="active"><img src="images/locales/Ukrainian.png"
+                  alt="Ukrainian">Ukrainian</a></li>
+            <li class=""><a href="/"><img src="images/locales/Polish.png" alt="Polish">Polish</a></li>
+            <li class=""><a href="/"><img src="images/locales/German.png" alt="German">German</a></li>
+          </ul>
+        </div>
+        <div class="header-search">
+          <a href="#searchModal" class="btn-fab search-toggle jsModalTrigger"><i class="rg rg-search"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="directory-page directory-page_list">
+    <div class="directory-search">
+      <div class="container">
+        <h1 class="search-title">Company Directory</h1>
+        <div class="search-subtitle">Explore hundreds of gambling companies grouped by industry vertical</div>
+        <form class="search-form">
+          <div class="form-group">
+            <input type="text" name="search" placeholder="Search company">
+            <button class="btn btn-default"><i class="rg rg-search-grey"></i></button>
+          </div>
+          <div class="search-wrap">
+            <div class="search-result">
+              <div class="search-not-found d-none">
+                No matches found
+              </div>
+              <div class="search-loading d-none">
+                <i class="rg rg-loading"></i>Please wait...
+              </div>
+              <div class="search-companies d-none">
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-1.png" alt="">
+                  </div>
+                  <span>Better Collective</span>
+                </a>
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-2.png" alt="">
+                  </div>
+                  <span>Fer Bemo</span>
+                </a>
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-3.png" alt="">
+                  </div>
+                  <span>Boom and Room</span>
+                </a>
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-1.png" alt="">
+                  </div>
+                  <span>Better Collective</span>
+                </a>
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-2.png" alt="">
+                  </div>
+                  <span>Fer Bemo</span>
+                </a>
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-3.png" alt="">
+                  </div>
+                  <span>Bedo</span>
+                </a>
+                <a href="/" class="search-item">
+                  <div class="company-avatar">
+                    <img src="/images/directory/directory-search-1.png" alt="">
+                  </div>
+                  <span>Boom and Room</span>
+                </a>
+
+                <button class="btn-default search-show-more">Show more <span class="rg rg-forward"></span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="directory-main">
+      <div class="container">
+        <div class="directory-main_left d-xs-none">
+          <div class="join-list">
+            <img src="images/directory/directory-join.png" alt="">
+            <div class="title-3 mb-3">JOIN THE BIG LIST!</div>
+            <div class="text-grey-2 subtitle-1 mb-4">Are you running a powerful crypto service or tool that we should
+              list? Contact us</div>
+            <a href="/" class="btn btn-primary btn-sm">Join list</a>
+          </div>
+        </div>
+        <div class="directory-main_right">
+          <div class="directory-heading">
+            <div>
+              <div class="directory-title title-2 mb-2 mb-xs-0">
+                Media Company
+              </div>
+              <div class="subtitle-4 mb-2 text-grey-2 mb-xs-0">
+                1,696 companies
+              </div>
+            </div>
+            <form action="directory-sort">
+              <select name="directory-sort" class="directory-sort">
+                <option value="alphabet" selected>for Alphabet</option>
+                <option value="popularity">by Popularity</option>
+                <option value="novelty">by Novelty</option>
+              </select>
+            </form>
+          </div>
+          <div class="directory-content">
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-3.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic trading by
+                making modern
+                high-frequency trading strategies available to everyone.
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-2.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-1.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic trading by
+                making modern
+                high-frequency trading strategies available to everyone.
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-2.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic trading by
+                making modern
+                high-frequency trading strategies available to everyone.
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-3.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic .
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-2.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic trading by
+                making modern
+                high-frequency trading strategies available to everyone.
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-1.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic .
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+            <div class="directory-item">
+              <div class="d-flex flex-row align-center mb-4">
+                <img src="images/directory/most-3.png" alt="">
+                <div>
+                  <div class="directory-item_title">Softswiss</div>
+                  <div class="directory-item_text">Casino Platform</div>
+                </div>
+              </div>
+              <div class="directory-text">
+                Hummingbot is a community-driven and open source project that aims to democratize algorithmic trading by
+                making modern modern
+              </div>
+              <div class="directory-buttons">
+                <a href="/" class="btn btn-primary btn-sm">Read Review</a>
+                <a href="/" class="btn btn-secondary btn-sm" target="_blank"><span
+                    class="d-none d-xs-flex mr-2">Website</span><i class="rg rg-external"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination-wrapper container d-flex flex-column align-center pt-2">
+      <a href="/" class="pagination-more btn-default">Show more <span class="rg rg-forward"></span></a>
+      <ul class="pagination">
+        <li class="pagination-prev"><a href="/"><span class="rg rg-forward"></span></a></li>
+        <li><a href="/">1</a></li>
+        <li><span>...</span></li>
+        <li><a href="/">7</a></li>
+        <li class="active"><a href="/">8</a></li>
+        <li><a href="/">9</a></li>
+        <li><span>...</span></li>
+        <li><a href="/">153</a></li>
+        <li class="pagination-next"><a href="/"><span class="rg rg-forward"></span></a></li>
+      </ul>
+    </div>
+
+    <div class="directory-recently">
+      <div class="container">
+        <div class="directory-heading">
+          <div class="directory-title title-2">
+            Recently Added
+          </div>
+          <div class="subtitle-4 text-grey-2">
+            Media Companies
+          </div>
+        </div>
+
+        <div class="swiper companies-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                <div class="company-img">
+                  <img src="images/directory/company-1.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-2.png" alt="">
+                </div>
+                <span>Gambling.com Group</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-3.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-1.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-3.png" alt="">
+                </div>
+                <span>Gambling.com Group</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-2.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-1.png" alt="">
+                </div>
+                <span>Gambling.com Group</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-2.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-1.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-3.png" alt="">
+                </div>
+                <span>Gambling.com Group</span>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="/" class="company-item">
+                 <div class="company-img">
+                  <img src="images/directory/company-2.png" alt="">
+                </div>
+                <span>Better Collective</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-none d-xs-flex">
+      <div class="join-list">
+        <img src="images/directory/directory-join.png" alt="">
+        <div class="title-3 mb-3">JOIN THE BIG LIST!</div>
+        <div class="text-grey-2 subtitle-1 mb-4">Are you running a powerful crypto service or tool that we should
+          list? Contact us</div>
+        <a href="/" class="btn btn-primary btn-sm">Join list</a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <a href="/"><img src="images/logo.svg" alt=""></a>
+      </div>
+      <div class="footer-links d-flex flex-row flex-xs-column align-center justify-center">
+        <a href="/">About Us</a>
+        <a href="/">Pivacy Policy</a>
+        <a href="/">Advertise</a>
+        <a href="/">Manage Cookies</a>
+      </div>
+      <div class="footer-socials d-flex flex-row align-center justify-center">
+        <a href="/" class="btn-fab mx-1"><i class="rg rg-twitter"></i></a>
+        <a href="/" class="btn-fab mx-1"><i class="rg rg-instagram"></i></a>
+        <a href="/" class="btn-fab mx-1"><i class="rg rg-facebook"></i></a>
+      </div>
+      <div class="footer-about text-white text-center">
+        <b>Resentgamblingnews.com</b><br>
+        is the worlds leading independent online gaming authority, providing trusted online
+        casino news, guides, reviews and information since 2010.
+      </div>
+      <div class="footer-copyright text-center text-small text-grey">
+        Copyright ©2023 RGN Interactive Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <div id="searchModal" class="modal search-modal">
+    <div class="modal__overlay jsOverlay"></div>
+    <div class="modal__container">
+      <button class="modal__close jsModalClose"><i class="rg rg-close"></i></button>
+      <div class="modal-content">
+        <div class="modal-header">
+          <input class="search-field" type="text" name="search" placeholder="Search articles, tags and authors">
+        </div>
+        <div class="modal-body">
+          <div class="search-result">
+            <div class="search-not-found d-none">
+              No matches found
+            </div>
+            <div class="search-loading d-none">
+              <i class="rg rg-loading"></i>Please wait...
+            </div>
+            <div class="search-authors d-none">
+              <div class="search-caption">AUTHORS</div>
+              <a href="/" class="search-item">
+                <div class="author-avatar">
+                  <img src="/images/authors/author-1.png" alt="">
+                </div>
+                <span>Den Warren</span>
+              </a>
+              <a href="/" class="search-item">
+                <div class="author-avatar">
+                  <img src="/images/authors/author-4.png" alt="">
+                </div>
+                <span>Daniella Marmenned</span>
+              </a>
+              <a href="/" class="search-item">
+                <div class="author-avatar">
+                  <!-- empty avatar -->
+                </div>
+                <span>Tom O’Donnell</span>
+              </a>
+            </div>
+            <div class="search-tags d-none">
+              <div class="search-caption">TAGS</div>
+              <a href="/" class="search-item">
+                <span>Drones</span>
+              </a>
+              <a href="/" class="search-item">
+                <span>Debit</span>
+              </a>
+            </div>
+            <div class="search-articles d-none">
+              <div class="search-caption">ARTICLES</div>
+              <a href="/" class="search-item">
+                <div class="article-name">
+                  Defense Ministry: Ukraine advances 2 kilometers in multiple directions
+                </div>
+                <div class="article-caption">
+                  Nulla facilisi. Integer dempus elementum jbcs gartina dsn...
+                </div>
+              </a>
+              <a href="/" class="search-item">
+                <div class="article-name">
+                  Defense Ministry: Ukraine advances 2 kilometers in multiple directions
+                </div>
+                <div class="article-caption">
+                  Nulla facilisi. Integer dempus elementum jbcs gartina dsn...
+                </div>
+              </a>
+              <button class="btn-default search-show-more">Show more <span class="rg rg-forward"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/swiper/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
