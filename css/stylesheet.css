@@ -4627,6 +4627,9 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
 .directory-search .search-form input:hover, .directory-search .search-form input:hover ~ .btn {
     background: #F2F2F2;
 }
+.directory-search .search-form input:focus, .directory-search .search-form input:focus ~ .btn {
+    background: #FFFFFF;
+}
 .directory-search .search-wrap {
     position: absolute;
     top: 100%;
@@ -4660,7 +4663,7 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     border-radius: 0px 6px 0 0;
 }
 .directory-search .search-companies {
-    padding: 0 16px 16px;
+    padding: 0 16px;
 }
 .directory-search .search-companies .search-item {
     display: flex;
@@ -4716,14 +4719,14 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     padding-left: 32px;
     box-sizing: border-box;
 }
-.directory-main a.text-blue {
+.directory-main a.text-primary {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 16px;
     line-height: 24px;
 }
-.directory-main a.text-blue .rg {
+.directory-main a.text-primary .rg {
     width: 16px;
     height: 16px;
     margin-left: 4px;
@@ -6006,6 +6009,10 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     }
     .directory-page_list .directory-item {
         padding: 24px 0;
+        border-bottom: 1px solid #E8E8E8;
+    }
+    .directory-page_list .directory-item:last-child {
+        border-bottom: 0;
     }
     .directory-page_list .directory-item img {
         margin-right: 8px;
@@ -6182,6 +6189,13 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     }
     .directory-search .search-companies .search-item {
         padding: 8px 12px;
+    }
+    .directory-recently .directory-heading {
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+    .directory-recently .directory-heading .directory-title {
+        padding-bottom: 8px;
     }
 }
 @media (max-width: 460px) {
