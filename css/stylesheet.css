@@ -4707,6 +4707,7 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     border-radius: 6px;
     border: 1px solid #E8E8E8;
     background: #FFF;
+    box-sizing: border-box;
 }
 .join-list img {
     width: 100%;
