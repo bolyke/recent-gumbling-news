@@ -103,6 +103,30 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   }
 
+    // Directory Tabs - scroll shadow on mobile
+    if (window.innerWidth < 768 && document.querySelector('.directory-tabs .tabs')) {
+      document.querySelector('.directory-tabs .tabs').addEventListener('scroll', (e) => {
+        let tabsW = e.target.parentElement,
+        tabs = e.target;
+  
+        if (tabs.scrollLeft < 5) {
+          tabsW.style.setProperty('--tabs-before', '-1');
+          tabsW.style.setProperty('--tabs-before-opacity', '0');
+        } else {
+          tabsW.style.setProperty('--tabs-before', '1');
+          tabsW.style.setProperty('--tabs-before-opacity', '1');
+        }
+        if (tabs.scrollLeft > tabs.scrollWidth - tabs.offsetWidth - 5) {
+          tabsW.style.setProperty('--tabs-after', '-1');
+          tabsW.style.setProperty('--tabs-after-opacity', '0');
+        } else {
+          tabsW.style.setProperty('--tabs-after', '1');
+          tabsW.style.setProperty('--tabs-after-opacity', '1');
+        }
+      })
+    }
+  
+
   // Show Blog Articles on Mobile
   const buttonShowArticles = document.querySelector('.btn-show-articles');
   if (buttonShowArticles) {
@@ -201,21 +225,35 @@ document.addEventListener('DOMContentLoaded', function () {
   // Tabs 
   if (document.querySelector('.tabs')) {
     const tabs = document.querySelectorAll('[data-tab-target]')
-    const tabContents = document.querySelectorAll('[data-tab-content]')
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
-        tabContents.forEach(tabContent => {
+        const tabSiblings = Array.from(tab.parentElement.children).filter(sibling => sibling !== tab && sibling.classList.contains('tab'));
+        const target = document.querySelector(tab.dataset.tabTarget);
+
+        const tabContentSiblings = Array.from(target.parentElement.children).filter(sibling => sibling !== target);
+
+        tabContentSiblings.forEach(tabContent => {
           tabContent.classList.remove('active')
         })
-        tabs.forEach(tab => {
+     
+        tabSiblings.forEach(tab => {
           tab.classList.remove('active')
         })
+
         tab.classList.add('active')
         target.classList.add('active')
+
+        if (document.querySelector('.directory-content-wrapper.about-content') && tab.dataset.tabTarget == '#about') {
+          document.querySelector('.directory-content-wrapper.about-content').classList.remove('d-none')
+        } else {
+          document.querySelector('.directory-content-wrapper.about-content').classList.add('d-none')
+        }
       })
     })
+
+   
+
   }
 
   // Directory Search 
@@ -249,8 +287,116 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('.directory-search.active').classList.remove('active');
       }
     }, true);
-}
+  }
 
+  // Directory chart 
+  Chart.defaults.font.size = 16;
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.color = '#19191A';
+
+  const dataChart1 = {
+    labels: [
+      'Ukraine',
+      'Poland',
+      'Rest of the world'
+    ],
+    datasets: [{
+      data: [57, 33, 10],
+      backgroundColor: [
+        '#4278F0',
+        '#FFBF1C',
+        '#FFE587'
+      ],
+      borderColor: 'transparent',
+      cutout: '62%',
+    }],
+  };
+  const directoryChart1 = new Chart(
+    document.getElementById('directory-chart-1'),
+    {
+      type: 'doughnut',
+      data: dataChart1,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            padding: 20,
+            title: {
+              display: true
+            },
+            labels: {
+              boxWidth: 12,
+              boxHeight: 12,
+              padding: 16,
+              useBorderRadius: true,
+              borderRadius: 2
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            titleColor: '#19191A',
+            bodyColor: '#19191A',
+            padding: 12,
+            borderColor: '#E8E8E8',
+            borderWidth: 1,
+            boxPadding: 8,
+          }
+        },
+      
+      },
+    }
+  );
+
+  const dataChart2 = {
+    labels: [
+      'CPA',
+      'Fixed',
+      'Rev.share'
+    ],
+    datasets: [{
+      data: [9, 81, 10],
+      backgroundColor: [
+        '#4278F0',
+        '#FFBF1C',
+        '#FFE587'
+      ],
+      borderColor: 'transparent',
+      cutout: '62%',
+    }]
+  };
+  const directoryChart2 = new Chart(
+    document.getElementById('directory-chart-2'),
+    {
+      type: 'doughnut',
+      data: dataChart1,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            padding: 20,
+            labels: {
+              boxWidth: 12,
+              boxHeight: 12,
+              padding: 16,
+              useBorderRadius: true,
+              borderRadius: 2
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+            titleColor: '#19191A',
+            bodyColor: '#19191A',
+            padding: 12,
+            borderColor: '#E8E8E8',
+            borderWidth: 1,
+            boxPadding: 8,
+          }
+        },
+      },
+    }
+  );
 
 });
 
