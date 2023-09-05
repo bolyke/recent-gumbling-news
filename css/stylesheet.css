@@ -4969,15 +4969,12 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
 }
 .directory-page .directory-right {
-    position: relative;
     width: 30%;
     padding-left: 32px;
     margin-bottom: 16px;
     box-sizing: border-box;
 }
 .directory-right .directory-viewed {
-    position: sticky;
-    top: 24px;
     padding: 24px;
     border-radius: 6px;
     border: 1px solid #E8E8E8;
@@ -5009,9 +5006,14 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     padding-left: 16px;
     font-size: 16px;
     line-height: 24px;
+    color: #19191A;
 }
-.directory-right .directory-viewed .popular-item > div a {
+.directory-right .directory-viewed .popular-item > div .company-name {
+    margin-top: 0;
     font-weight: 600;
+}
+.directory-right .directory-viewed .popular-item:hover .company-name {
+    text-decoration: underline;
 }
 .directory-right .directory-viewed .popular-item > div div {
     margin-top: 4px;
@@ -5032,7 +5034,7 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     object-fit: cover;
     object-position: center;
     vertical-align: middle;
-    border-radius: 8px;
+    border-radius: 12px;
     border: 4px solid rgba(87, 87, 91, 0.10);
 }
 .directory-detail .directory-name {
@@ -5049,7 +5051,8 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     align-items: center;
     flex-wrap: wrap;
 }
-.directory-detail .directory-features span {
+.directory-detail .directory-features span,
+.directory-detail .directory-features a {
     position: relative;
     display: block;
     padding-right: 8px;
@@ -5058,7 +5061,11 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     line-height: 24px;
     color: #737478;
 }
-.directory-detail .directory-features span::after {
+.directory-detail .directory-features a:hover {
+    text-decoration: underline;
+}
+.directory-detail .directory-features span::after,
+.directory-detail .directory-features a::after {
     content: '';
     position: absolute;
     right: 0px;
@@ -5251,13 +5258,21 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     color: #737478;
     pointer-events: none;
 }
-.directory-tabs .link-more {
+.directory-tabs .text-read-more p {
+    display: inline;
+}
+.directory-tabs .read-more {
+    display: inline;
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     color: #8D8E91;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    outline: none;
 }
-.directory-tabs .link-more:hover {
+.directory-tabs .read-more:hover {
     text-decoration: underline;
 }
 .directory-tabs .tab-content .overview-card {
@@ -5432,11 +5447,21 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid #E8E8E8;
 }
 .directory-tabs .project-item .project-heading img {
+    width: 56px;
+    height: 56px;
+    transition: all .2s ease-in;
+}
+.directory-tabs .project-item .project-heading .project-link {
+    display: block;
     margin-right: 18px;
     width: 56px;
     height: 56px;
-    border-radius: 4px;
+    overflow: hidden;
+    border-radius: 6px;
     border: 1px solid #E8E8E8;
+}
+.directory-tabs .project-item .project-heading .project-link:hover img {
+    transform: scale(1.25);
 }
 .directory-tabs .project-item .project-name {
     font-weight: 600;
@@ -5459,7 +5484,7 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     font-size: 16px;
     line-height: 24px;
 }
-.directory-tabs .project-item .link-more {
+.directory-tabs .project-item .read-more {
     color: #737478;
 }
 .dynamics-table {
@@ -5489,6 +5514,9 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     background: #fff;
     vertical-align: middle;
 }
+.dynamics-table td:not(:first-child) {
+    text-align: right;
+}
 .dynamics-table tr {
 }
 .dynamics-table tr th:first-child,
@@ -5513,18 +5541,12 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
 .dynamics-table tr:first-child th:last-child {
     border-radius: 0 6px 0 0;
 }
-/* .dynamics-table tr:last-child td:first-child {
-    border-radius: 0 0 0 6px;
-}
-.dynamics-table tr:last-child td:last-child {
-    border-radius: 0 0 6px 0;
-} */
 .dynamics-table table .rg-increase,
 .dynamics-table table .rg-decrease {
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-bottom: -2px;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -5px;
 }
 .dynamics-table::-webkit-scrollbar {
     width: 12px;
@@ -5566,8 +5588,35 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     padding-bottom: 0;
 }
 .directory-chart {
-    max-width: 320px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    /* max-width: 320px; */
     margin: 0 auto;
+}
+.directory-chart > svg {
+    max-width: 330px;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.directory-chart .chart-legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 350px;
+}
+.directory-chart .chart-legend > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 4px 8px 0;
+}
+.directory-chart .chart-legend > div svg {
+    margin-right: 8px;
 }
 .directory-tabs .news-tab .tabs {
     width: fit-content;
@@ -7037,7 +7086,8 @@ box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
     .directory-detail .directory-features {
         justify-content: center;
     }
-    .directory-detail .directory-features span {
+    .directory-detail .directory-features span,
+    .directory-detail .directory-features a {
         padding-bottom: 8px;
     }
     .directory-tabs > .tabs-wrapper {

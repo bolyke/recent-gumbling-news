@@ -289,114 +289,115 @@ document.addEventListener('DOMContentLoaded', function () {
     }, true);
   }
 
-  // Directory chart 
-  Chart.defaults.font.size = 16;
-  Chart.defaults.font.family = "'Inter', sans-serif";
-  Chart.defaults.color = '#19191A';
+  // Directory Chart
+  if (document.querySelector('.directory-chart')) {
+    // Chart 1
+    let data1 = { "Ukraine": 57, "Poland": 33, "Rest of the world": 10 }
+    let color1 = d3.scaleOrdinal()
+      .domain(["Ukraine", "Poland", "Rest of the world"])
+      .range(["#4278F0", "#FFE587", "#FFBF1C"]);
 
-  const dataChart1 = {
-    labels: [
-      'Ukraine',
-      'Poland',
-      'Rest of the world'
-    ],
-    datasets: [{
-      data: [57, 33, 10],
-      backgroundColor: [
-        '#4278F0',
-        '#FFBF1C',
-        '#FFE587'
-      ],
-      borderColor: 'transparent',
-      cutout: '62%',
-    }],
-  };
-  const directoryChart1 = new Chart(
-    document.getElementById('directory-chart-1'),
-    {
-      type: 'doughnut',
-      data: dataChart1,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            padding: 20,
-            title: {
-              display: true
-            },
-            labels: {
-              boxWidth: 12,
-              boxHeight: 12,
-              padding: 16,
-              useBorderRadius: true,
-              borderRadius: 2
-            }
-          },
-          tooltip: {
-            backgroundColor: 'rgba(255, 255, 255, 0.85)',
-            titleColor: '#19191A',
-            bodyColor: '#19191A',
-            padding: 12,
-            borderColor: '#E8E8E8',
-            borderWidth: 1,
-            boxPadding: 8,
-          }
-        },
-      
-      },
-    }
-  );
+    buildChart('#directory-chart-1', data1, color1);
 
-  const dataChart2 = {
-    labels: [
-      'CPA',
-      'Fixed',
-      'Rev.share'
-    ],
-    datasets: [{
-      data: [9, 81, 10],
-      backgroundColor: [
-        '#4278F0',
-        '#FFBF1C',
-        '#FFE587'
-      ],
-      borderColor: 'transparent',
-      cutout: '62%',
-    }]
-  };
-  const directoryChart2 = new Chart(
-    document.getElementById('directory-chart-2'),
-    {
-      type: 'doughnut',
-      data: dataChart1,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            padding: 20,
-            labels: {
-              boxWidth: 12,
-              boxHeight: 12,
-              padding: 16,
-              useBorderRadius: true,
-              borderRadius: 2
-            }
-          },
-          tooltip: {
-            backgroundColor: 'rgba(255, 255, 255, 0.85)',
-            titleColor: '#19191A',
-            bodyColor: '#19191A',
-            padding: 12,
-            borderColor: '#E8E8E8',
-            borderWidth: 1,
-            boxPadding: 8,
-          }
-        },
-      },
+    // Chart 2
+    let data2 = { "CPA": 9, "Rev.share": 10, "Fixed": 81 }
+    let color2 = d3.scaleOrdinal()
+      .domain(["CPA", "Rev.share", "Fixed"])
+      .range(["#4278F0", "#FFE587", "#FFBF1C"]);
+
+    buildChart('#directory-chart-2', data2, color2);
+
+    function buildChart (elem, data, color) {
+      // set the dimensions and margins of the graph
+      const width = 330,
+        height = 330,
+        margin = 30;
+
+      // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+      const radius = Math.min(width, height) / 2 - margin,
+        innerRadius = radius * 0.5,
+        outerRadius = radius * 0.8,
+        labelRadius = (innerRadius * 0.4 + outerRadius * 0.9),
+        arcLabel = d3.arc().innerRadius(labelRadius).outerRadius(labelRadius);
+
+      // append the svg object to the div called 'directory-chart-0'
+      let svg = d3.select(elem)
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .append("g")
+        .attr("transform", `translate(${width / 2},${height / 2})`);
+
+      // Compute the position of each group on the pie:
+      let pie = d3.pie()
+      .sort(null) // Do not sort group by size
+      .value(d => d[1])
+      let data_ready = pie(Object.entries(data))
+
+      // The arc generator
+      let arc = d3.arc()
+        .innerRadius(radius * 0.5)         // This is the size of the donut hole
+        .outerRadius(radius * 0.8)
+
+      // Another arc that won't be drawn. Just for labels positioning
+      let outerArc = d3.arc()
+        .innerRadius(radius * 0.9)
+        .outerRadius(radius * 0.9)
+
+      // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+      svg
+        .selectAll('allSlices')
+        .data(data_ready)
+        .join('path')
+        .attr('d', arc)
+        .attr('fill', d => color(d.data[1]))
+
+      // Add the polylines between chart and labels:
+      svg
+        .selectAll('allLabels')
+        .data(data_ready)
+        .join('text')
+        .text(d => `${d.data[1]}%`)
+        .attr("transform", d => `translate(${arcLabel.centroid(d)})`)
+        .style('text-anchor', function (d) {
+          const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
+          return (midangle < Math.PI ? 'start' : 'end')
+        })
+
+      // Add legend.
+      let legendWrap = document.querySelector(`${elem} .chart-legend`);
+
+      data_ready.forEach(item => {
+        legendWrap.insertAdjacentHTML('beforeend', `<div><svg width="12" height="12"><rect x="0" y="0" rx="2" width="12" height="12" style="fill: ${color(item.data[1])}"></rect></svg><span>${item.data[0]}</span></div>`)
+      });
     }
-  );
+  }
+
+  // Read more buttons
+  // Get the elements
+  document.querySelectorAll('.text-read-more').forEach(item => {
+    const textParagraph = item.querySelector('p');
+    const readMoreButton = item.querySelector('.read-more');
+  
+    const fullText = textParagraph.textContent;
+  
+    const maxLength = parseInt(item.dataset.chars) || 130;
+    textParagraph.textContent = fullText.slice(0, maxLength) + '...';
+  
+    function toggleText() {
+      if (textParagraph.textContent.length === maxLength + 3) {
+        textParagraph.textContent = fullText;
+        readMoreButton.textContent = 'read less';
+      } else {
+        textParagraph.textContent = fullText.slice(0, maxLength) + '...';
+        readMoreButton.textContent = 'read more';
+      }
+    }
+  
+    readMoreButton.addEventListener('click', toggleText);
+  })
+
 
 });
 
