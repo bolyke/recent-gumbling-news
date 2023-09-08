@@ -244,11 +244,15 @@ document.addEventListener('DOMContentLoaded', function () {
         tab.classList.add('active')
         target.classList.add('active')
 
-        if (document.querySelector('.directory-content-wrapper.about-content') && tab.dataset.tabTarget == '#about') {
-          document.querySelector('.directory-content-wrapper.about-content').classList.remove('d-none')
-        } else {
-          document.querySelector('.directory-content-wrapper.about-content').classList.add('d-none')
+        if (document.querySelector('.directory-tabs')) {
+          document.querySelector('.directory-page').dataset.tabCurrent = tab.dataset.tabTarget;
         }
+
+        // if (document.querySelector('.directory-content-wrapper.about-content') && tab.dataset.tabTarget == '#about') {
+        //   document.querySelector('.directory-content-wrapper.about-content').classList.remove('d-none')
+        // } else {
+        //   document.querySelector('.directory-content-wrapper.about-content').classList.add('d-none')
+        // }
       })
     })
 
